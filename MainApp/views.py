@@ -12,6 +12,7 @@ def home(request):
 
 def country_page(request, country_name):
     for country in countries:
+        # FIXME: Если страна с указанным именем не будет найдена, то получим 500 ошибку, т.к. context не будет создан
         if country["country"] == country_name:
             context = {
                 "country": country
